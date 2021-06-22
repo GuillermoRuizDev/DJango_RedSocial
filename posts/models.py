@@ -1,9 +1,9 @@
 """ Posts models. """
-from django.db import models
+""" from django.db import models
 
 
 class User(models.Model):
-    """ User Model. """
+    # User Model.
 
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
@@ -21,3 +21,7 @@ class User(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
 
+    def __str__(self):
+        # Return email
+        return self.email
+ """
