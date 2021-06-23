@@ -1,6 +1,5 @@
 """" CodeGram Urls module """
-
-""" #Django
+#Django
 from django.contrib import admin
 from django.urls import path
 
@@ -18,5 +17,5 @@ urlpatterns = [
 
     path('posts/', posts_views.list_posts)
 ]
- """
+
  
