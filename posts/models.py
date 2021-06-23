@@ -1,27 +1,24 @@
 """ Posts models. """
-""" from django.db import models
 
+# Django
 
-class User(models.Model):
-    # User Model.
+from users.models import Profile
+from django.contrib.auth.models import User
+from django.db import models
 
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
+class Post(models.Model):
+    """ Post model. """
 
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
-    is_admin = models.BooleanField(default=False)
+    title = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='posts/photos')
 
-    bio =  models.TextField(blank=True)
-
-    birthdate = models.DateField(blank=True, null=True)
-
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-
+    created = models.DateField(auto_now_add=True)
+    modified = models.DateField(auto_now=True)
 
     def __str__(self):
-        # Return email
-        return self.email
- """
+        """ Return title and username """
+        #return f'{self.title} by @{self.user.username}'
+        return '{} by @{}'.format(self.title, self.user.username)

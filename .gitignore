@@ -3,3 +3,5 @@ venv
 .vs
 __pycache__/
 *.pyc
+users/pictures
+db.sqlite3
