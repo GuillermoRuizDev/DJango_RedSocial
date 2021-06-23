@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 users/pictures
 db.sqlite3
+media
