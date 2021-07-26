@@ -11,7 +11,8 @@ from django.db.models.fields import TextField
 class Profile(models.Model):
     """ Profile model. 
 
-        Proxy model that extends the base data with other information.
+        Proxy model that extends the base data with other information for us web.
+
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     website = models.URLField(max_length=200, blank=True)
