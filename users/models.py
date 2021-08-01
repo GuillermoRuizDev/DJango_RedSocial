@@ -9,7 +9,7 @@ from django.db.models.fields import TextField
 # Create your models here.
 
 class Profile(models.Model):
-    """ Profile model. 
+    """ Profile model.
 
         Proxy model that extends the base data with other information.
     """
@@ -18,8 +18,8 @@ class Profile(models.Model):
     biography = models.TextField(blank=True)
     phone_number = models.CharField(max_length=20, blank=True)
 
-    picture = models.ImageField(upload_to="users/pictures", 
-        blank=True, 
+    picture = models.ImageField(upload_to="users/pictures",
+        blank=True,
         null=True
     )
     created = models.DateTimeField(auto_now_add=True)
@@ -28,6 +28,3 @@ class Profile(models.Model):
     def __str__(self):
         """ self.user.username. """
         return self.user.username
-    
-
-

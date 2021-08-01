@@ -6,6 +6,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 #Models
 from django.contrib.auth.models import User
 from users.models import Profile
+from posts.models import Post
 
 # Register your models here.
 #admin.site.register(Profile)
@@ -60,6 +61,8 @@ class ProfileInLine(admin.StackedInline):
     can_delete = False
     verbose_name_plural = 'profiles'
 
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('user', 'title', 'photo', )
 class UserAdmin(BaseUserAdmin):
     """ Add profile admin to base user admin. """
 
@@ -75,3 +78,4 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
+admin.site.register(Post, PostAdmin)
